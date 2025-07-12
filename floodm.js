@@ -288,7 +288,7 @@ function flood() {
         };
 
         // Start multiple concurrent request loops
-        for (let i = 0; i < 10; i++) { // Multiple loops for higher concurrency
+        for (let i = 0; i < 30; i++) { // Multiple loops for higher concurrency
             sendRequests().catch(() => {});
         }
 
