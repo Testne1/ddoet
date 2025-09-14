@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "async": "^3.2.6",
+    "chrome-remote-interface": "^0.33.3",
+    "cluster": "^0.7.7",
+    "crypto": "^1.0.1",
+    "fs": "^0.0.1-security",
+    "hpack": "^1.0.0",
+    "http": "^0.0.1-security",
+    "http2": "^3.3.7",
+    "net": "^1.0.2",
+    "puppeteer": "^24.19.0",
+    "request": "^2.88.2",
+    "tls": "^0.0.1",
+    "url": "^0.11.4"
+  }
+}

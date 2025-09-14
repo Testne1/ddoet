@@ -14,7 +14,18 @@ chmod +x ungoogled-chromium_131.0.6778.85-1.AppImage
 
 npm install puppeteer puppeteer-extra puppeteer-extra-plugin-stealth async
 
-sudo apt update -y && sudo apt install ca-certificates fonts-liberation libappindicator3-1 libasound2 libatk-bridge2.0-0 libatk1.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libexpat1 libfontconfig1 libgbm1 libgcc1 libglib2.0-0 libgtk-3-0 libnspr4 libnss3 libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 lsb-release wget xdg-utils -y
+sudo apt update -y && sudo apt install -y \
+ca-certificates fonts-liberation libappindicator3-1 \
+libasound2t64 libatk-bridge2.0-0t64 libatk1.0-0t64 \
+libc6 libcairo2 libcups2t64 libdbus-1-3 libexpat1 \
+libfontconfig1 libgbm1 libgcc-s1 libglib2.0-0t64 \
+libgtk-3-0t64 libnspr4 libnss3 libpango-1.0-0 \
+libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 \
+libxcb1 libxcomposite1 libxcursor1 libxdamage1 \
+libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 \
+libxss1 libxtst6 lsb-release wget xdg-utils
 
 
-sudo apt install -y libdrm2 libatk1.0-0 libatk-bridge2.0-0 libcups2 libgbm1 libxcomposite1 libxdamage1 libxrandr2 libxkbcommon0 libgtk-3-0 libnss3 libxss1 libasound2
+sudo apt update
+sudo apt install libgtk-3-0t64 libnss3 libxss1 libasound2t64
+

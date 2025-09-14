@@ -3,7 +3,7 @@ import aiofiles
 import os
 from datetime import datetime
 
-INPUT_FILE = "proxies.txt"
+INPUT_FILE = "ssl_proxies.txt"
 OUTPUT_FILE = "proxy.txt"
 TEST_URL = "https://www.google.com"
 TIMEOUT = 10
